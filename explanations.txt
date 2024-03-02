@@ -1,0 +1,55 @@
+Index.html:
+This is the main HTML file for your React application. It acts as the entry point for the web part of your app. Here's what happens inside:
+
+- The file sets up the basic structure of an HTML document, including the `head` and `body`.
+- Inside the `head`, it links to essential resources like CSS for styling (including Bootstrap for ready-made styles) and metadata like the viewport settings for mobile responsiveness.
+- The `body` contains a `div` with an id of `root`. React will use this `div` as a container to display your entire application. Essentially, React dynamically fills this `div` with your app's content.
+- The `noscript` tag provides a message for users who have JavaScript disabled, informing them that they need JavaScript to use the app.
+
+
+Home.js:
+This is the main HTML file for your React application. It acts as the entry point for the web part of your app. Here's what happens inside:
+
+- The file sets up the basic structure of an HTML document, including the `head` and `body`.
+- Inside the `head`, it links to essential resources like CSS for styling (including Bootstrap for ready-made styles) and metadata like the viewport settings for mobile responsiveness.
+- The `body` contains a `div` with an id of `root`. React will use this `div` as a container to display your entire application. Essentially, React dynamically fills this `div` with your app's content.
+- The `noscript` tag provides a message for users who have JavaScript disabled, informing them that they need JavaScript to use the app.
+
+
+db.js:
+This file sets up the connection to your MySQL database:
+
+- It imports the `mysql` package, which allows your server to communicate with MySQL databases.
+- A connection object is created with details like the database's host, user, password, and name. These details are essential for establishing a connection to the database.
+- The connection is then initiated. If successful, a message logs to the console confirming the connection. If there's an error, it's also logged, indicating a problem with the database connection.
+- The database connection object is exported so it can be used in other parts of the server to perform database operations.
+
+
+mapController.js:
+This controller handles adding names to the database:
+
+- It starts by importing the database connection setup.
+- The `addName` function is defined to process requests to add a new name. It checks if the name already exists in the database and, if not, inserts the new name.
+- The process involves executing SQL queries to search for and potentially add the name. Responses are sent back based on the outcome of these operations (e.g., success message, error message, or name already exists message).
+
+
+mapRoute.js:
+This file defines routes related to map functionalities on the server:
+
+- Express is imported, and a router instance is created to manage a subset of routes for the application.
+- The `addName` function from the `mapController` is imported to be used as a handler for a specific route.
+- A route is defined for POST requests to `/addName`, associating the endpoint with the `addName` function. This setup tells the server to use the `addName` function to handle POST requests at that path.
+- The router is exported for use in the main server setup, allowing these routes to be integrated into the server's overall routing system.
+
+
+index.js(server):
+The main server file using Express to set up and start your server:
+
+- Express is imported to create an application instance, handling HTTP requests and responses.
+- `dotenv` is configured to load environment variables, like the port number, from a `.env` file.
+- CORS middleware is applied to allow your server to accept requests from different origins, crucial for API accessibility.
+- JSON middleware is used to parse JSON request bodies, making it easy to work with JSON data sent by clients.
+- The router for map-related routes is imported and applied to the application, specifying that routes prefixed with `/api` will be handled according to the defined router.
+- Finally, the application is instructed to listen on a specific port, effectively starting the server and making it ready to handle incoming requests.
+
+
