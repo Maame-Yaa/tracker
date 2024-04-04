@@ -18,3 +18,8 @@ body{
     border-radius: 2px;
     text-align: center;
 }
+
+.appmap{
+    height: 700px;
+    width: 700px;
+}

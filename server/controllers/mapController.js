@@ -2,7 +2,7 @@ const db = require('../db');
 
 module.exports.addName = (req, res) => {
     const name = req.body.name;
-    const checkName = "SELECT * FROM store WHERE name=?";
+    const checkName = "select * from store WHERE name=?";
     
     db.query(checkName, name, (err, response) => {
         if (err) {
@@ -27,3 +27,19 @@ module.exports.addName = (req, res) => {
         }
     });
 };
+module.exports.mapInfo = (req, res) =>{
+    const name = req.body.name
+    console.log(name)
+    const sql = "select * from store where name=?"
+
+    db.query(sql,name,(err,result)=>{
+        console.log(result)
+        if(result){
+            res.status(200).json({result})
+        }
+        else{
+            console.log(err)
+            res.status(400).json({msg: 'Something went wrong'}) 
+        }
+    })
+}
