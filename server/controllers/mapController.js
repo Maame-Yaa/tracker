@@ -17,7 +17,7 @@ module.exports.addName = (req, res) => {
             const insertQuery = "INSERT INTO store (name) VALUES (?)";
             db.query(insertQuery, [name], (err, result) => {
                 if (err) {
-                    console.log(err);
+                    console.log('err');
                     res.status(500).json({ msg: 'Internal Server Error' });
                     return;
                 }
@@ -33,8 +33,9 @@ module.exports.mapInfo = (req, res) =>{
     const sql = "select * from store where name=?"
 
     db.query(sql,name,(err,result)=>{
-        console.log(result)
+        console.log("result", result)
         if(result){
+            console.log(result)
             res.status(200).json({result})
         }
         else{
@@ -42,4 +43,23 @@ module.exports.mapInfo = (req, res) =>{
             res.status(400).json({msg: 'Something went wrong'}) 
         }
     })
+}
+
+module.exports.addMap =(req,res)=>{
+
+    const parentId = req.body.parentId
+    const coordinates = req.body.coordinates
+
+    const sqlQuery = "INSERT INTO store2 (id,parentId,coordinates) VALUES (id,?,?)"
+
+    db.query(sqlQuery,[parentId,coordinates],(err,result)=>{
+       
+        if(result){
+            res.status(400).json({msg: 'Polygon added successfully'})
+        }
+        if(err){
+            res.status(400).json({msg: 'Something went wrong'})
+        }
+    })
+
 }
