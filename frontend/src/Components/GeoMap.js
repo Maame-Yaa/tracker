@@ -78,13 +78,13 @@ function GeoMap({apiKey, center, paths=[], point,color}) {
     
   return (
     <div className='App'>
-        <LoadScript
+        {/* <LoadScript
             id="script-loader"
             googleMapsApiKey={apiKey}
             libraries={libraries}
             language="en"
             region="us"
-        >
+        > */}
             <GoogleMap
             mapContainerClassName='appmap'
             center={center}                
@@ -125,7 +125,7 @@ function GeoMap({apiKey, center, paths=[], point,color}) {
 
             </GoogleMap>
             
-        </LoadScript>
+        {/* </LoadScript> */}
     </div>
   )
 }

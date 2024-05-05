@@ -5,6 +5,7 @@ body{
 }
 .App{
     text-align: center;
+    
 }
 .searchtext{
     width: 400px;
@@ -21,5 +22,98 @@ body{
 
 .appmap {
     height: 500px;
-    width: 500px;
+    width: 100%;
   }
+
+  .appmap2 {
+    height: 250px;
+    width: 100%;
+  }
+
+
+
+  .app-background {
+    background-color: rgb(173, 216, 230); /* Soft blue background */
+    /* padding: 20px; Add some padding */
+    height: 100vh;
+  }
+
+
+  .title-container {
+    width: 40%;
+    margin: 0 auto;
+    background-color: #fff; /* White background for the title container */
+    border-radius: 8px; /* Rounded corners */
+    box-shadow: 0 2px 4px rgba(0,0,0,0.2); /* Subtle shadow */
+    padding: 20px; /* Padding around the content */
+    /* margin-bottom: 20px; Space between this container and the next */
+  }
+
+  .input-group {
+    display: flex; /* Aligns children inline */
+    align-items: center; /* Center-align vertically */
+    justify-content: center; /* Center-align horizontally */
+    gap: 10px; /* Adjust the gap between input and button */
+  }
+
+  .custom-button {
+    background-color: #0056b3; /* Dark blue color */
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    transition-duration: 0.4s;
+    cursor: pointer;
+    border-radius: 4px;
+  }
+  
+  .custom-button:hover {
+    background-color: #003366; /* Even darker blue on hover */
+    color: white;
+  }
+  
+  
+  
+  .custom-input {
+    flex-grow: 1; /* Takes up the remaining space */
+    margin-right: 10px; /* Adds a margin to the right of the input */
+  }
+  
+  /* You might want to style your table headers, cells, etc. */
+  .table-custom {
+    width: 100%;
+    border-collapse: collapse; /* Remove gaps between table cells */
+  }
+  
+  .table-custom th,
+  .table-custom td {
+    padding: 8px; 
+    text-align: center; /* Align text to the left within cells */
+    border-bottom: 1px solid #dee2e6; /* Bootstrap's default border color for tables */
+  }
+  
+  /* Style your headers */
+  .header-custom {
+    background-color: #007bff; /* Bootstrap primary color */
+    color: white;
+  }
+
+  .navbar-custom {
+    background-color: #454545; /* adjust the color value as needed */
+  }
+  .navbar-custom .navbar-brand{
+    color: white;
+  }
+  
+  .navbar-custom .navbar-nav .nav-link {
+    color: white;}
+
+    .active-geofence {
+      background-color: #c8e6c9; /* Light green background for active geofence */
+  }
+    
+    
